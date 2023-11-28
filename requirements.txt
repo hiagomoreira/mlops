@@ -1,0 +1,3 @@
+tensorflow==2.15.0
+dvc==3.30.1
+dvc-gdrive==2.20.0
