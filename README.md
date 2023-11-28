@@ -1,56 +1,60 @@
-# MLOps Course Repository
-This repository contains my work and activities from the MLOps (Machine Learning Operations) course. The course covers a range of topics crucial for effectively managing machine learning workflows and models in production.
+# PetCare Solutions MLOps Project
 
-## Introduction
-Welcome to my MLOps course repository! This space documents my journey through the course, focusing on practical implementations and hands-on experiences in various MLOps domains.
+## Background
+
+In a world where responsible pet adoption is a priority, "PetCare Solutions" (fictional) has established itself as a leading platform for connecting animal shelters with potential new pet owners.
+
+PetCare Solutions currently utilizes an animal classification algorithm (for dogs and cats) in their photos. However, they are facing challenges in allowing their data science team and machine learning engineers to effectively enhance and deploy models. The company aims to create an MLOps platform that fosters collaboration and continuous model improvement, enabling seamless model enhancements and deployments.
+
+The client has provided the training code attached to this task.
+
+## Project Deliverables
+
+1. **GitHub Repository:**
+    - Link to the GitHub repository containing the project code.
+
+2. **Project Report (PDF):**
+   - A comprehensive report in PDF format that includes:
+       - Project overview and objectives.
+       - Approach and methodology used.
+       - Challenges faced and solutions implemented.
+       - Contributions of each team member.
+       - Conclusion and future recommendations.
 
 ## Getting Started
-To begin working with this project, follow these steps:
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/hiagomoreira/mlops.git
-   ```
-
-2. **Navigate to the Project Directory:**
-   ```bash
    cd mlops
+   git checkout t1_data_versioning
    ```
 
-3. **Checkout the project branch:**
+2. **Suggestion - Create and Activate the Virtual Environment:**
+
    ```bash
-   git checkout <branch>
+   python -m venv venv       # Creates the virtual environment
+   source venv/bin/activate  # Activates the virtual environment on Linux/Mac
+   .\venv\Scripts\activate   # or Activates the virtual environment on Windows
    ```
 
-4. **Install Dependencies:**
+3. **Install Dependencies:**
+
    ```bash
-   pip install -r requirements.txt
+    pip install -r requirements.txt
    ```
 
-## Course Topics
-1. **Model Tracking and Experiment Management**
-   - Overview and best practices for model tracking and experiment management.
+4. **Get Dataset from Google Drive:**
 
-2. **ML Pipelines Orchestration**
-   - Concepts and tools for orchestrating end-to-end ML pipelines.
+   - Use DVC to pull the dataset from Google Drive.
 
-3. **Model Deployment**
-   - Techniques and strategies for deploying machine learning models in production environments.
+     ```bash
+     dvc pull -r gdrive
+     ```
 
-4. **Model Monitoring**
-   - Monitoring solutions for tracking the performance of deployed models.
+5. **Run the Training Code:**
 
-5. **Version Control and Code Management**
-   - Version control and code management practices specific to ML projects.
-
-6. **Infrastructure as Code Deployment and Management**
-   - Infrastructure as Code (IaC) for deploying and managing ML infrastructure.
-
-7. **Data Management**
-   - Best practices for managing and handling data in the context of machine learning.
-
-8. **CI/CD**
-   - Continuous Integration and Continuous Deployment practices tailored for ML workflows.
-
-9. **Governance and Compliance**
-   - Governance principles and ensuring compliance in ML operations.
+     ```bash
+     python cnn_image_classifier.py
+     ```
