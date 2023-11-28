@@ -3,4 +3,4 @@ outs:
   size: 229065939
   nfiles: 10019
   hash: md5
-  path: .ds
+  path: ds
