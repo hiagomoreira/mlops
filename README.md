@@ -46,13 +46,13 @@ The client has provided the training code attached to this task.
    Activates the virtual environment on Linux/Mac
 
    ```bash
-      source venv/bin/activate
+   source venv/bin/activate
    ```
 
    Activates the virtual environment on Windows
 
    ```bash
-      .\venv\Scripts\activate
+   .\venv\Scripts\activate
    ```
 
 4. **Install Dependencies:**
