@@ -31,21 +31,37 @@ The client has provided the training code attached to this task.
    git checkout t1_data_versioning
    ```
 
-2. **Create and Activate the Virtual Environment:**
+2. **Install Python 3.9.0**
+
+   ```bash
+   https://www.python.org/downloads/release/python-390/
+   ```
+
+3. **Create and Activate the Virtual Environment:**
 
    ```bash
    python -m venv venv
-   source venv/bin/activate
-   .\venv\Scripts\activate
    ```
 
-3. **Install Dependencies:**
+   Activates the virtual environment on Linux/Mac
+
+   ```bash
+      source venv/bin/activate
+   ```
+
+   Activates the virtual environment on Windows
+
+   ```bash
+      .\venv\Scripts\activate
+   ```
+
+4. **Install Dependencies:**
 
    ```bash
     pip install -r requirements.txt
    ```
 
-4. **Get Dataset from Google Drive:**
+5. **Get Dataset from Google Drive:**
 
    Use DVC to pull the dataset from Google Drive.
 
@@ -53,7 +69,7 @@ The client has provided the training code attached to this task.
    dvc pull -r gdrive
    ```
 
-5. **Run the Training Code:**
+6. **Run the Training Code:**
 
    ```bash
    python cnn_image_classifier.py
