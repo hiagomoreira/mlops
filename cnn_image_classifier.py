@@ -3,6 +3,8 @@
 from tensorflow.keras import layers, Sequential, optimizers
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import pathlib
+from dvclive import Live
+from dvclive.keras import DVCLiveCallback
 
 class Training:
     def __init__(self, params):
@@ -76,14 +78,19 @@ class Training:
     def train(self):
         train_ds, val_ds = self.load_ds()
 
-        self.model.fit(
-            train_ds,
-            steps_per_epoch=train_ds.samples // self.batch_size,
-            validation_data=val_ds,
-            validation_steps=val_ds.samples // self.batch_size,
-            epochs=self.params['epochs'],
-            verbose=self.params['verbose'],
-        )
+        with Live() as live:
+            self.model.fit(
+                train_ds,
+                steps_per_epoch=train_ds.samples // self.batch_size,
+                validation_data=val_ds,
+                validation_steps=val_ds.samples // self.batch_size,
+                epochs=self.params['epochs'],
+                verbose=self.params['verbose'],
+                callbacks=[
+                    DVCLiveCallback(live=live)
+                ]
+            )
+            live.log_artifact(self.model_filepath, type="model")
 
         return self
 

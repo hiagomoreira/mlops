@@ -3,3 +3,4 @@ dvc
 dvc-gdrive
 scipy
 Pillow
+dvclive
