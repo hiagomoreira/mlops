@@ -28,7 +28,7 @@ The client has provided the training code attached to this task.
    ```bash
    git clone https://github.com/hiagomoreira/mlops.git
    cd mlops
-   git checkout t1_data_versioning
+   git checkout t2_exp_tracking_pipelines
    ```
 
 2. **Install Python 3.9.0**
@@ -61,16 +61,8 @@ The client has provided the training code attached to this task.
     pip install -r requirements.txt
    ```
 
-5. **Get Dataset from Google Drive:**
-
-   Use DVC to pull the dataset from Google Drive.
+5. **Run pipeline**
 
    ```bash
-   dvc pull -r gdrive
-   ```
-
-6. **Run the Training Code:**
-
-   ```bash
-   python cnn_image_classifier.py
+   dvc repro
    ```

@@ -1,0 +1,22 @@
+stages:
+  download_data:
+    cmd: dvc pull -r gdrive
+    outs:
+    - ds
+
+  train:
+    cmd: python cnn_image_classifier.py
+    deps:
+    - ds
+
+params:
+- params.yaml
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step
+artifacts:
+  model:
+    path: model.keras
+    type: model
